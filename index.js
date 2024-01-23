@@ -3,7 +3,11 @@ const { MerkleTree } = require('merkletreejs')
 const SHA256 = require('crypto-js/sha256')
 
 
-const addresses = ['0x1234567890123456789012345678901234567890', '0xabcdefabcdefabcdefabcdefabcdefabcdefabcdef', '0x5555555555555555555555555555555555555555'];
+const addresses = [
+    '0x1234567890123456789012345678901234567890',
+    '0xabcdefabcdefabcdefabcdefabcdefabcdefabcdef',
+    '0x5555555555555555555555555555555555555555'
+];
 const leaves = addresses.map(x => SHA256(x));
 
 const tree = new MerkleTree(leaves, SHA256);
